@@ -11,8 +11,7 @@ export default async function handler(
   try {
     const { messages } = req.body;
 
-    const API_KEY =
-      "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";
+    const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
     const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
     const response = await fetch(API_URL, {
