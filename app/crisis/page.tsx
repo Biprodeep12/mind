@@ -47,16 +47,16 @@ const Crisis: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="crisis-container relative flex flex-col items-center justify-center p-4 space-y-4 min-h-screen w-full bg-gradient-to-r from-red-900 via-gray-800 to-red-900 text-white">
-      <div className="relative flex flex-col items-center justify-center p-8 space-y-8 min-h-screen w-full bg-gradient-to-r from-red-900 via-gray-800 to-red-900 text-white">
+    <div className="crisis-container relative flex flex-col items-center justify-center p-4 space-y-4 min-h-screen w-full  bg-white text-white">
+      <div className="relative flex flex-col items-center justify-center p-8 space-y-8 min-h-screen w-full bg-white text-red">
         <button
           onClick={() => router.push("/")}
-          className="absolute top-4 right-4 text-white bg-red-700 hover:bg-red-800 p-2 rounded-full shadow-md"
+          className="absolute top-4 right-4 text-red-700 bg-white hover:bg-red-50 "
         >
           <XCircle className="w-6 h-6" />
         </button>
         <div className="text-center px-4">
-          <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">
+          <h1 className="text-5xl font-extrabold text-red-700 drop-shadow-lg">
             🚨 Crisis Hotlines 🚨
           </h1>
           <p className="text-lg mt-3 font-medium">
@@ -67,16 +67,16 @@ const Crisis: React.FC = () => {
           {crisisHotlines.map((hotline, index) => (
             <Card
               key={index}
-              className="p-6 shadow-xl border border-red-500 rounded-2xl bg-gray-900 transition-transform transform hover:scale-105 hover:shadow-2xl text-white"
+              className="p-6 shadow-xl border border-black rounded-2xl bg-white transition-transform transform hover:scale-105 hover:shadow-2xl text-black"
             >
               <CardContent className="flex flex-col items-center space-y-5 text-center">
-                <h2 className="text-3xl font-bold text-red-400">
+                <h2 className="text-3xl font-bold text-red-700">
                   {hotline.country}
                 </h2>
-                <p className="text-lg font-semibold text-red-300">
+                <p className="text-lg font-semibold text-red-500">
                   {hotline.number}
                 </p>
-                <p className="text-base text-gray-300 italic">
+                <p className="text-base font-semibold text-red-600 italic">
                   {hotline.description}
                 </p>
                 <div className="flex flex-wrap justify-center gap-4 mt-5 w-full">
@@ -90,7 +90,7 @@ const Crisis: React.FC = () => {
                     </a>
                   </Button>
                   <Button
-                    className="border border-red-500 text-black hover:bg-green-700 hover:text-white px-5 py-3 rounded-lg w-full sm:w-auto text-lg font-semibold"
+                    className="border border-black text-black hover:bg-green-700 hover:text-white px-5 py-3 rounded-lg w-full sm:w-auto text-lg font-semibold"
                     variant="outline"
                   >
                     <Link
@@ -108,10 +108,10 @@ const Crisis: React.FC = () => {
             </Card>
           ))}
         </div>
-        <div className="text-center px-4 mt-10 bg-red-800 border-l-4 border-red-600 p-4 rounded-md shadow-md">
-          <div className="flex items-center justify-center space-x-2">
-            <AlertTriangle className="text-red-300 w-6 h-6" />
-            <p className="text-md text-white font-semibold">
+        <div className="text-center px-4 mt-10 bg-red-100 border-l-4 border-red-600 p-4 rounded-md shadow-md">
+          <div className="flex items-center justify-center space-x-2 border-red-600">
+            <AlertTriangle className="text-red-600 w-6 h-6" />
+            <p className="text-md text-red-600 font-semibold">
               If you or someone you know is in crisis, please reach out. Help is
               available 24/7.
             </p>
