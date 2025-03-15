@@ -11,7 +11,7 @@ interface Message {
 }
 
 const API_KEY =
-  "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";
+  "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";
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 export default function MentalHealthChat() {
