@@ -1,7 +1,8 @@
 "use client";
-
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { useState, useRef, useEffect } from "react";
-import { Send, Loader2, Stethoscope, MessageCircle } from "lucide-react";
+import { Send, Loader2, Stethoscope, MessageCircle, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Message {
@@ -147,111 +148,141 @@ export default function MentalHealthChat() {
   }
 
   return (
-    <div className="flex flex-col h-screen">
-      <header className="bg-white shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <div className="flex items-center gap-3">
-            <Stethoscope className="w-8 h-8 text-primary" />
-            <h1 className="text-2xl font-bold text-gray-900">
-              Mental Health Consultation
-            </h1>
+    <>
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+          <div className="flex gap-2 items-center">
+            <Heart className="h-6 w-6 text-primary" />
+            <h1 className="text-xl font-bold">MindTrack</h1>
           </div>
-          <p className="mt-2 text-gray-600">
-            Consult with Dr. AI about your mental health concerns. While I can
-            provide general guidance and support, please remember to seek
-            professional care for specific mental health issues.
-          </p>
+          <div className="flex flex-1 items-center justify-end space-x-4">
+            <nav className="flex items-center space-x-2">
+              <Button asChild variant="ghost" size="sm">
+                <Link href="/AI">Dr.AI</Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <Link href="/dashboard">Dashboard</Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <Link href="/journal">Journal</Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <Link href="/resources">Resources</Link>
+              </Button>
+              <Button asChild size="sm">
+                <Link href="/profile">Profile</Link>
+              </Button>
+            </nav>
+          </div>
         </div>
       </header>
+      <div className="flex flex-col h-screen">
+        <header className="bg-white shadow-sm">
+          <div className="max-w-4xl mx-auto px-4 py-6">
+            <div className="flex items-center gap-3">
+              <Stethoscope className="w-8 h-8 text-primary" />
+              <h1 className="text-2xl font-bold text-gray-900">
+                Mental Health Consultation
+              </h1>
+            </div>
+            <p className="mt-2 text-gray-600">
+              Consult with Dr. AI about your mental health concerns. While I can
+              provide general guidance and support, please remember to seek
+              professional care for specific mental health issues.
+            </p>
+          </div>
+        </header>
 
-      <main className="flex-1 overflow-hidden">
-        <div className="max-w-4xl mx-auto h-full flex flex-col px-4">
-          <div className="flex-1 overflow-y-auto py-8 space-y-6">
-            {messages.length === 0 ? (
-              <div className="text-center space-y-4">
-                <div className="health-card">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                    Welcome to Your Mental Health Consultation
-                  </h2>
-                  <p className="text-gray-600 mb-3">
-                    I am Dr. AI, your virtual mental health consultant. I am
-                    here to provide support, guidance, and a listening ear for
-                    your mental well-being journey.
-                  </p>
-                  <p className="text-gray-600">
-                    Important: While I can offer general mental health
-                    information and emotional support, I cannot provide specific
-                    diagnoses or prescribe medication. For urgent mental health
-                    concerns, please contact a licensed mental health
-                    professional or emergency services.
-                  </p>
-                  <div className="mt-6 p-4 bg-primary/5 rounded-lg">
-                    <h3 className="font-semibold text-gray-900 mb-2">
-                      Crisis Resources
-                    </h3>
-                    <p className="text-sm text-gray-700">
-                      If you are experiencing a mental health crisis or having
-                      thoughts of self-harm:
+        <main className="flex-1 overflow-hidden">
+          <div className="max-w-4xl mx-auto h-full flex flex-col px-4">
+            <div className="flex-1 overflow-y-auto py-8 space-y-6">
+              {messages.length === 0 ? (
+                <div className="text-center space-y-4">
+                  <div className="health-card">
+                    <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                      Welcome to Your Mental Health Consultation
+                    </h2>
+                    <p className="text-gray-600 mb-3">
+                      I am Dr. AI, your virtual mental health consultant. I am
+                      here to provide support, guidance, and a listening ear for
+                      your mental well-being journey.
                     </p>
-                    <ul className="mt-2 text-sm text-gray-700 list-disc list-inside">
-                      <li>
-                        Emergency: Call 911 (US) or your local emergency number
-                      </li>
-                      <li>988 Suicide & Crisis Lifeline: Call or text 988</li>
-                      <li>Crisis Text Line: Text HOME to 741741</li>
-                    </ul>
+                    <p className="text-gray-600">
+                      Important: While I can offer general mental health
+                      information and emotional support, I cannot provide
+                      specific diagnoses or prescribe medication. For urgent
+                      mental health concerns, please contact a licensed mental
+                      health professional or emergency services.
+                    </p>
+                    <div className="mt-6 p-4 bg-primary/5 rounded-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">
+                        Crisis Resources
+                      </h3>
+                      <p className="text-sm text-gray-700">
+                        If you are experiencing a mental health crisis or having
+                        thoughts of self-harm:
+                      </p>
+                      <ul className="mt-2 text-sm text-gray-700 list-disc list-inside">
+                        <li>
+                          Emergency: Call 911 (US) or your local emergency
+                          number
+                        </li>
+                        <li>988 Suicide & Crisis Lifeline: Call or text 988</li>
+                        <li>Crisis Text Line: Text HOME to 741741</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <>
-                {messages.map((message, index) => (
-                  <ChatMessage key={index} message={message} />
-                ))}
-                {isLoading && <LoadingAnimation />}
-              </>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
-
-          <form onSubmit={handleSubmit} className="py-4">
-            <div className="flex gap-4">
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Share your thoughts and feelings..."
-                className="health-input"
-                disabled={isLoading}
-              />
-              <button
-                type="submit"
-                disabled={isLoading || !input.trim()}
-                className="health-button"
-              >
-                {isLoading ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Processing...</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    <span>Send</span>
-                  </>
-                )}
-              </button>
+              ) : (
+                <>
+                  {messages.map((message, index) => (
+                    <ChatMessage key={index} message={message} />
+                  ))}
+                  {isLoading && <LoadingAnimation />}
+                </>
+              )}
+              <div ref={messagesEndRef} />
             </div>
-          </form>
-        </div>
-      </main>
 
-      <footer className="bg-white border-t border-gray-200 py-4">
-        <div className="max-w-4xl mx-auto px-4 text-center text-sm text-gray-600">
-          This is not a substitute for professional mental health care. If you
-          Are experiencing a crisis, please seek immediate professional help.
-        </div>
-      </footer>
-    </div>
+            <form onSubmit={handleSubmit} className="py-4">
+              <div className="flex gap-4">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Share your thoughts and feelings..."
+                  className="health-input"
+                  disabled={isLoading}
+                />
+                <button
+                  type="submit"
+                  disabled={isLoading || !input.trim()}
+                  className="health-button"
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Processing...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      <span>Send</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+        </main>
+
+        <footer className="bg-white border-t border-gray-200 py-4">
+          <div className="max-w-4xl mx-auto px-4 text-center text-sm text-gray-600">
+            This is not a substitute for professional mental health care. If you
+            Are experiencing a crisis, please seek immediate professional help.
+          </div>
+        </footer>
+      </div>
+    </>
   );
 }
