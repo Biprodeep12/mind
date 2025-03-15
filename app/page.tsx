@@ -32,6 +32,9 @@ export default function Home() {
           <div className="flex flex-1 items-center justify-end space-x-4">
             <nav className="flex items-center space-x-2">
               <Button asChild variant="ghost" size="sm">
+                <Link href="/dashboard">Dr.AI</Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
                 <Link href="/dashboard">Dashboard</Link>
               </Button>
               <Button asChild variant="ghost" size="sm">
