@@ -16,10 +16,8 @@ export default function Nav() {
           <nav className="flex items-center space-x-2">
             <Button asChild variant="ghost" size="sm">
               <div className="flex items-center justify-center">
-                <Link href="/AI">
-                  <Bot color="blue" />
-                  Dr.AI
-                </Link>
+                <Bot color="blue" />
+                <Link href="/AI">Dr.AI</Link>
               </div>
             </Button>
             <Button asChild variant="ghost" size="sm">
