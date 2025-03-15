@@ -1,12 +1,19 @@
-import Link from "next/link"
-import { ArrowRight, Calendar, Clock, Plus } from "lucide-react"
+import Link from "next/link";
+import { ArrowRight, Calendar, Clock, Plus } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import MoodChart from "@/components/mood-chart"
-import TreatmentProgress from "@/components/treatment-progress"
-import DailySuggestions from "@/components/daily-suggestions"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import MoodChart from "@/components/mood-chart";
+import TreatmentProgress from "@/components/treatment-progress";
+import DailySuggestions from "@/components/daily-suggestions";
 
 export default function DashboardPage() {
   return (
@@ -38,7 +45,9 @@ export default function DashboardPage() {
           <CardContent className="flex flex-col items-center justify-center space-y-4">
             <div className="flex flex-col items-center space-y-2">
               <div className="text-5xl font-bold text-primary">7</div>
-              <p className="text-sm text-muted-foreground">Days of consistent tracking</p>
+              <p className="text-sm text-muted-foreground">
+                Days of consistent tracking
+              </p>
             </div>
           </CardContent>
           <CardFooter>
@@ -52,7 +61,7 @@ export default function DashboardPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Today's Tasks</CardTitle>
+            <CardTitle>Todays Tasks</CardTitle>
             <CardDescription>Scheduled activities</CardDescription>
           </CardHeader>
           <CardContent>
@@ -110,7 +119,9 @@ export default function DashboardPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Mood Trends</CardTitle>
-                <CardDescription>Your mood patterns over the past 30 days</CardDescription>
+                <CardDescription>
+                  Your mood patterns over the past 30 days
+                </CardDescription>
               </CardHeader>
               <CardContent className="h-[300px]">
                 <MoodChart />
@@ -126,7 +137,9 @@ export default function DashboardPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Treatment Journey</CardTitle>
-                <CardDescription>Track your progress and milestones</CardDescription>
+                <CardDescription>
+                  Track your progress and milestones
+                </CardDescription>
               </CardHeader>
               <CardContent className="h-[300px]">
                 <TreatmentProgress />
@@ -141,6 +154,5 @@ export default function DashboardPage() {
         </Tabs>
       </div>
     </div>
-  )
+  );
 }
-
