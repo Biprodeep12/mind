@@ -24,7 +24,33 @@ import Nav from '@/components/navbar';
 export default function Home() {
   return (
     <div className='flex min-h-screen flex-col'>
-      <Nav />
+      <header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+        <div className='container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0'>
+          <div className='flex gap-2 items-center'>
+            <Heart className='h-6 w-6 text-primary' />
+            <h1 className='text-xl font-bold'>MindTrack</h1>
+          </div>
+          <div className='flex flex-1 items-center justify-end space-x-4'>
+            <nav className='flex items-center space-x-2'>
+              <Button asChild variant='ghost' size='sm'>
+                <Link href='/AI'>Dr.AI</Link>
+              </Button>
+              <Button asChild variant='ghost' size='sm'>
+                <Link href='/dashboard'>Dashboard</Link>
+              </Button>
+              <Button asChild variant='ghost' size='sm'>
+                <Link href='/journal'>Journal</Link>
+              </Button>
+              <Button asChild variant='ghost' size='sm'>
+                <Link href='/resources'>Resources</Link>
+              </Button>
+              <Button asChild size='sm'>
+                <Link href='/profile'>Profile</Link>
+              </Button>
+            </nav>
+          </div>
+        </div>
+      </header>
       <main className='flex-1'>
         <section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800'>
           <div className='container px-4 md:px-6'>
