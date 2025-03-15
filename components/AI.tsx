@@ -16,10 +16,6 @@ interface Message {
   content: string;
 }
 
-const API_KEY =
-  "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";
-const API_URL = "https://openrouter.ai/api/v1/chat/completions";
-
 interface MentalHealthChatProps {
   setChat: (value: boolean) => void;
 }
@@ -40,25 +36,12 @@ export default function MentalHealthChat({ setChat }: MentalHealthChatProps) {
 
   async function sendMessage(messages: Message[]) {
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch("/api/ai", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${API_KEY}`,
-          "HTTP-Referer": window.location.origin,
-          "X-Title": "Mental Health Consultation",
         },
-        body: JSON.stringify({
-          model: "deepseek/deepseek-r1:free",
-          messages: [
-            {
-              role: "system",
-              content:
-                "You are Dr. AI, a compassionate and knowledgeable mental health professional. While you cannot diagnose or prescribe medication, you provide evidence-based information, general mental health guidance, and emotional support. Always maintain a professional yet warm demeanor, use appropriate medical terminology when relevant, and emphasize the importance of consulting with licensed mental health professionals for specific medical advice or treatment. Prioritize patient safety and well-being in all interactions.",
-            },
-            ...messages,
-          ],
-        }),
+        body: JSON.stringify({ messages }),
       });
 
       if (!response.ok) {
