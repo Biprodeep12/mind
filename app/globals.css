@@ -113,3 +113,34 @@
     @apply bg-background text-foreground;
   }
 }
+.ano {
+  background-color: rgba(120, 120, 120, 0);
+  animation: anoo 1s ease forwards;
+}
+@keyframes anoo {
+  from {
+    background-color: rgba(120, 120, 120, 0);
+  }
+  to {
+    background-color: rgba(120, 120, 120, 0.7);
+  }
+}
+.ani {
+  transform: translate(-50px);
+  animation: anio 0.5s ease forwards;
+}
+@keyframes anio {
+  from {
+    transform: translate(0, -50px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+.sc::-webkit-scrollbar {
+  display: none;
+}
+
+.sc {
+  scrollbar-width: none;
+}
