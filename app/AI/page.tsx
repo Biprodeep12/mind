@@ -174,9 +174,9 @@ export default function MentalHealthChat() {
                     Welcome to Your Mental Health Consultation
                   </h2>
                   <p className="text-gray-600 mb-3">
-                    I am Dr. AI, your virtual mental health consultant. I'm here
-                    to provide support, guidance, and a listening ear for your
-                    mental well-being journey.
+                    I am Dr. AI, your virtual mental health consultant. I am
+                    here to provide support, guidance, and a listening ear for
+                    your mental well-being journey.
                   </p>
                   <p className="text-gray-600">
                     Important: While I can offer general mental health
