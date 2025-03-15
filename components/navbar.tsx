@@ -3,11 +3,11 @@
 import { Bot, Heart, User } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import MentalHealthChat from "@/app/AI/page";
+import MentalHealthChat from "@/components/AI";
 import { useState } from "react";
 
 export default function Nav() {
-  const [chat, setChat] = useState(false);
+  const [chat, setChat] = useState<boolean>(false);
   return (
     <>
       {chat && <MentalHealthChat setChat={setChat} />}
