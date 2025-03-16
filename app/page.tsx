@@ -103,7 +103,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter>
                   <Button variant="ghost" size="sm" asChild>
-                    <Link href="/dashboard">
+                    <Link href="/moodtracker">
                       Track Mood <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
