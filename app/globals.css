@@ -157,3 +157,9 @@
   background-position: center;
   background-size: cover;
 }
+@media screen and (max-width: 593px) {
+  .qur {
+    margin-right: 0;
+    padding: 0 10px;
+  }
+}

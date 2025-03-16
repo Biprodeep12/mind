@@ -25,16 +25,10 @@ export default function DashboardPage() {
         <div className='mb-8 flex items-center justify-between'>
           <h1 className='text-3xl font-bold'>Your Dashboard</h1>
           <div className='flex items-center gap-2'>
-            <Button asChild variant='outline'>
-              <Link href='/journal/new'>
+            <Button asChild className='-mt-5'>
+              <Link href='/moodtracker'>
                 <Plus className='mr-2 h-4 w-4' />
-                New Journal Entry
-              </Link>
-            </Button>
-            <Button asChild>
-              <Link href='/track'>
-                <Plus className='mr-2 h-4 w-4' />
-                New Mood Entry
+                Mood Tracker
               </Link>
             </Button>
           </div>

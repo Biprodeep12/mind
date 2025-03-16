@@ -223,8 +223,8 @@ export default function Home() {
         </section>
       </main>
       <footer className='w-full flex flex-col pt-7'>
-        <div className='flex flex-row items-start justify-center gap-10'>
-          <div className='flex flex-col w-[400px] mr-10'>
+        <div className='flex flex-row items-start justify-center gap-10 flex-wrap'>
+          <div className='flex flex-col max-w-[400px] w-full mr-10  qur'>
             <div className='flex items-center space-x-2 text-2xl font-bold mb-3'>
               <Heart color='green' className='h-6 w-6 text-primary' />
               <span>MindTrack</span>
@@ -255,7 +255,7 @@ export default function Home() {
             <div>Biprodeep Bose</div>
             <div className='mb-2 font-light'>Email: bipbose123@gmail.com</div>
             <div>Bismay Dey</div>
-            <div className='font-light'>Email: bipbose123@gmail.com</div>
+            <div className='font-light'>Email: bismaydey001@gmail.com</div>
           </div>
         </div>
         <div
