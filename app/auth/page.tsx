@@ -47,7 +47,7 @@ export default function AuthPage() {
         {
           email: userCredential.user.email,
           lastLogin: new Date().toISOString(),
-          ...(isSignUp ? { createdAt: new Date().toISOString() } : {}), // ✅ Omits createdAt if not needed
+          ...(isSignUp ? { createdAt: new Date().toISOString() } : {}),
         },
         { merge: true }
       );

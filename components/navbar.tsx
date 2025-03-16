@@ -61,16 +61,17 @@ export default function Nav() {
           <nav className="hidden sm:flex items-center space-x-2">
             <Button
               onClick={() => setChat(true)}
-              className="text-xl"
+              className="text-xl backdrop-blur-3xl bg-transparent p-2 rounded-lg hover:bg-white/10 transition"
               asChild
               variant="ghost"
               size="sm"
             >
-              <div className="flex gap-3 flex-nowrap flex-row cursor-pointer">
+              <div className="flex gap-3 flex-nowrap flex-row cursor-pointer p-2">
                 <Bot color="blue" className="transform scale-150" />
                 Dr.AI
               </div>
             </Button>
+
             <Button className="text-xl" asChild variant="ghost" size="sm">
               <Link href={user ? "/dashboard" : "/auth"}>Dashboard</Link>
             </Button>
